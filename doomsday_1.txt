@@ -1,0 +1,90 @@
+#include <stdio.h>
+
+int isleap(int y) {
+    int l;
+    if (y>1582)
+        if ((y%100!=0 && y%4==0) || (y%100==0 && y%400==0)) l=1;
+        else l=0;
+    else if (y>4)
+        if (y%4==0) l=1; else l=0;
+    else l=0;
+    return l;
+}
+
+int isleaprj(int y) {
+    int l;
+    if (y>1923)
+        if ((y%100!=0 && y%4==0) || (y%100 && (y%900==200 || y%900==600))) l=1;
+        else l=0;
+}
+
+int anchor(int y) {
+    int a,c;
+    c=y/100;
+    if (y>1582) a=(5*(c%4))%7+2; else if (y>4) a=(6*c)%7;
+    return a;
+}
+
+int doomsday(int y) {
+    int t,a;
+    a=anchor(y);
+    t=y%100;
+    if (t%2==1) t=t+11;
+    t=t/2;
+    if (t%2==1) t=t+11;
+    t=7-(t%7);
+    t=(a+t)%7;
+    return t;
+}
+
+void dominical(int y) {
+    if (isleap(y)==1)
+        switch (doomsday(y)) {
+            case 1: printf("CB"); break;
+            case 2: printf("BA"); break;
+            case 3: printf("AG"); break;
+            case 4: printf("GF"); break;
+            case 5: printf("FE"); break;
+            case 6: printf("ED"); break;
+            default: printf("DC");
+        }
+    else if (y=1582) printf("GC");
+    else
+        switch(doomsday(y)) {
+            case 1: printf("B"); break;
+            case 2: printf("A"); break;
+            case 3: printf("G"); break;
+            case 4: printf("F"); break;
+            case 5: printf("E"); break;
+            case 6: printf("D"); break;
+            default: printf("C");
+        }
+}
+
+void main() {
+    int y;
+    printf("Enter the year to type! ");
+    do scanf("%d",&y); while (y<1);
+    switch (isleap(y)) {
+        case 1: printf("Leap year"); break;
+        default: printf("Normal year");
+    };
+    if (y>=2800) {
+        printf("\n");
+        switch (isleaprj(y)) {
+            case 1: printf("Leap year (Revised Julian)"); break;
+            default: printf("Normal year (Revised Julian)");
+        }
+    };
+    printf("\nDoomsday: ");
+    switch (doomsday(y)) {
+        case 1: printf("Monday"); break;
+        case 2: printf("Tuesday"); break;
+        case 3: printf("Wednesday"); break;
+        case 4: printf("Thursday"); break;
+        case 5: printf("Jumuah"); break;
+        case 6: printf("Sabbath"); break;
+        default: printf("Sunday");
+    }
+    printf("\nDominical letter: "); dominical(y);
+}

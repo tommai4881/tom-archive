@@ -1,0 +1,112 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <math.h>
+
+void main ()
+{
+    int y,t,a,c;
+    scanf("%d",&y);
+    if(y<0) printf("%d BC\n",abs(y)+1); else printf("AD %d\n",y);
+    switch((y%15)) {
+        case 1: printf("I. "); break;
+        case 2: printf("II. "); break;
+        case 3: printf("III. "); break;
+        case 4: printf("IV. "); break;
+        case 5: printf("V. "); break;
+        case 6: printf("VI. "); break;
+        case 7: printf("VII. "); break;
+        case 8: printf("VIII. "); break;
+        case 9: printf("IX. "); break;
+        case 10: printf("X. "); break;
+        case 11: printf("XI. "); break;
+        case 12: printf("XII. "); break;
+        case 13: printf("XIII. "); break;
+        case 14: printf("XIV. "); break;
+        case 0: printf("XV. ");
+    }
+    if (y>4) {
+        c=y/100; // tính ngày mỏ neo
+        if (y>1582) // theo lịch Gregorian (15 octobre 1582 --> nay).
+        {
+            a=(5*(c%4))%7+2; 
+            if ((y&4==0&&y%100!=0)||(y%100==0&&y%400==0)) printf("Năm nhuận. ");
+            else printf("Năm thường. ");
+        }
+        else // theo lịch Julian (1 mars (28 février) AD 4 --> 4 (14) octobre 1582).
+        {
+            a=(6*c)%7;
+            if (y&4==0) printf("Năm nhuận. ");
+            else printf("Năm thường. ");
+        }
+        t=y%100; // thuật toán "Số lẻ cộng 11"
+        if (t%2==1) t=(t+11)/2; else t=t/2;
+        if (t%2==1) t=t+11;
+        t=7-(t%7);
+        t=(t+a)%7;
+        switch (t) {
+            case 1: printf("Thứ Hai. "); break;
+            case 2: printf("Thứ Ba. "); break;
+            case 3: printf("Thứ Tư. "); break;
+            case 4: printf("Thứ Năm. "); break;
+            case 5: printf("Jumuah (Thứ Sáu). "); break;
+            case 6: printf("Sabbath (Thứ Bảy). "); break;
+            case 0: printf("Chúa Nhật. ");
+        }
+    }
+    else printf("Không hợp lệ. ");
+    /*trong 48 năm đầu của lịch Julian (1 janvier 45 BC (16 (14) décembre 46 BC)
+    --> 28/29 (27) février AD 4), các năm nhuận không xác định.*/
+    switch((y%19)) {
+        case 1: printf("I. "); break; //tính số hoàng kim
+        case 2: printf("II. "); break;
+        case 3: printf("III. "); break;
+        case 4: printf("IV. "); break;
+        case 5: printf("V. "); break;
+        case 6: printf("VI. "); break;
+        case 7: printf("VII. "); break;
+        case 8: printf("VIII. "); break;
+        case 9: printf("IX. "); break;
+        case 10: printf("X. "); break;
+        case 11: printf("XI. "); break;
+        case 12: printf("XII. "); break;
+        case 13: printf("XIII. "); break;
+        case 14: printf("XIV. "); break;
+        case 15: printf("XV. "); break;
+        case 16: printf("XVI. "); break;
+        case 17: printf("XVII. "); break;
+        case 18: printf("XVIII. "); break;
+        case 0: printf("XIX. ");
+    }
+    printf("\n");
+    switch ((y-3)%10)
+    {
+        case 1: printf("Giáp "); break;
+        case 2: printf("Ất "); break;
+        case 3: printf("Bính "); break;
+        case 4: printf("Đinh "); break;
+        case 5: printf("Mậu "); break;
+        case 6: printf("Kỷ "); break;
+        case 7: printf("Canh "); break;
+        case 8: printf("Tân "); break;
+        case 9: printf("Nhâm "); break;
+        case 0: printf("Quý ");
+    }
+    switch ((y-3)%12)
+    {
+        case 1: printf("Tý"); break;
+        case 2: printf("Sửu"); break;
+        case 3: printf("Dần"); break;
+        case 4: printf("Mão"); break;
+        case 5: printf("Thìn"); break;
+        case 6: printf("Tỵ"); break;
+        case 7: printf("Ngọ"); break;
+        case 8: printf("Mùi"); break;
+        case 9: printf("Thân"); break;
+        case 10: printf("Dậu"); break;
+        case 11: printf("Tuất"); break;
+        case 0: printf("Hợi");
+    };
+    if(y>=-543) printf(" - PL %d",y+544); else printf(" - %d TPL",abs(y+543));
+    if(y>=-2878) printf(" - VL %d",y+2879); else printf(" - %d TVL",abs(y+2878));
+    if(y>=1912) printf("\nJuche/Dân Quốc %d",y-1911); else printf("\n%d Tiền Dân Quốc",abs(1912-y));
+}

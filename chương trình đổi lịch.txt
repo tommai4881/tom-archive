@@ -1,0 +1,118 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void easter(int y){
+    int a,b,c,d,e,g,h,i,k,l,m,n,p;
+    a=y%19;
+    b=y/100;
+    c=y%100;
+    d=b/4;
+    e=b%4;
+    g=(8*b+13)/25;
+    h=(19*a+b-d-g + 15)%30;
+    i=c/4;
+    k=c%4;
+    l=(32 + 2*e + 2*i -h-k)%7;
+    m=(a + 11*h + 19*l)/433;
+    n=(h + l - 7*m + 90)/25;
+    p=(h + l - 7*m + 33*n + 19) % 32;
+    printf("Lễ Phục Sinh năm nay rơi vào ngày %d tháng %d năm %d",p,n,y);
+}
+
+void pascha(int y){
+    int a,b,c,d,e,g,ngay,thang;
+    a=y%4;
+    b=y%7;
+    c=y%19;
+    d=(19*c + 15)%30;
+    e=(2*a + 4*b - d + 34)%7;
+    g=d+e+ 114;
+    ngay=(g%31) + 1;
+    thang=g/31;
+    if (y>1582) printf("Lễ Pascha năm nay rơi vào ngày %d tháng %d năm %d theo lịch Julian.",ngay,thang,y);
+    else printf("Lễ Phục Sinh năm nay rơi vào ngày %d tháng %d năm %d.",ngay,thang,y);
+}
+
+int doomsday(int y){
+    int c,r,i;
+    if (y>1582) {
+        c=y/100;
+        if (c%4==0) r=2;
+        else if (c%4==1) r=0;
+        else if (c%4==2) r=5;
+        else r=3;
+        i=y%100;
+        if (i%2==1) i=i + 11;
+        i=i/2;
+        if (i%2==1) i=i + 11;
+        i=7-(i%7);
+        i=(i+r)%7;
+    }
+    else i=(5*(y%4)+ 3*(y%7))%7;
+    if (i==1) printf("Ngày doomsday của năm ấy là ngày Thứ Hai.");
+    else if (i==2) printf("Ngày doomsday của năm ấy là ngày Thứ Ba.");
+    else if (i==3) printf("Ngày doomsday của năm ấy là ngày Thứ Tư.");
+    else if (i==4) printf("Ngày doomsday của năm ấy là ngày Thứ Năm.");
+    else if (i==5) printf("Ngày doomsday của năm ấy là ngày Thứ Sáu (Jumu'ah).");
+    else if (i==6) printf("Ngày doomsday của năm ấy là ngày Thứ Bảy (Sabbath).");
+    else printf("Ngày doomsday của năm ấy là ngày Chúa Nhật.");
+}
+
+int converter(int y){
+    int pl,vl;
+    if (y>=-543) {
+        pl=y+ 544; printf("PL %d",pl);
+    }
+    else {
+        pl=abs(y)- 543; printf("%d TPL",pl);
+    }
+    if (y>=-2878) {
+        vl=y+ 2879; printf("\nVL %d",vl);
+    }
+    else 
+    {
+        vl=abs(y)- 2878; printf("\n%d TVL",vl);
+    }
+    if(y<=0) {
+        y=abs(y) + 1; printf("\n%d BC",y);
+    }
+    else printf("\nAD %d",y);
+}
+
+int main(){
+    int y,d,tt;
+    do {
+        printf("====================\n");
+        printf("Nhập năm cần tìm: "); scanf("%d",&y);
+        converter(y); printf("\n");
+        if (y>1582){
+            easter(y);
+            printf("\n");pascha(y);
+            d=y/100 - y/400 - 2;
+            printf("\nHiệu số ngày: %d \n",d);
+            if (y%100!=0) {
+                if (y%4==0) printf("Năm nay là năm nhuận.");
+                else printf("Năm nay là năm thường.");
+            }
+            else {
+                if (y%400==0) printf("Năm nay là năm nhuận.");
+                else printf("Năm nay là năm thường.");
+            };
+        }
+        else if (y>325) {
+            pascha(y);
+            if(y%4==0) printf("\nNăm nay là năm nhuận.");
+            else printf("\nNăm nay là năm thường.");
+        }
+        else if(y>4){
+            if(y%4==0) printf("Năm nay là năm nhuận.");
+            else printf("Năm nay là năm thường.");
+        };
+        if (y>0) {
+            printf("\n"); doomsday(y);
+        };
+        printf("\nBạn có muốn thử lại không? Nhấn 1 để tiếp tục. ");
+        scanf("%d",&tt);
+    } while(tt==1);
+    return 0;
+}

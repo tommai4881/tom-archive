@@ -1,0 +1,191 @@
+#include <stdio.h>
+
+void advent()
+{
+    printf("=======================================");
+    printf("\n===MÙA VỌNG===\n");
+    printf("Thời gian: Chúa Nhật I Mùa Vọng --> 24 décembre\n");
+    printf("Màu phụng vụ: Tím\n");
+    printf("Mục đích: Chuẩn bị cho Lễ Giáng Sinh và ngày Chúa đến. (Lưu ý: Không Kinh Vinh Danh trong Thánh lễ Chúa Nhật)\n");
+    printf("Các ngày lễ: 8/12: Lễ Đức Mẹ Vô Nhiễm Nguyên Tội (Lam)\n");
+    printf("17/11 ÂL: Lễ Vía Phật A-di-đà (Đỏ)\n");
+    printf("Chúa Nhật III Mùa Vọng (Hồng)\n");
+    printf("22/12: Ngày Thành lập Quân đội Nhân dân Việt Nam (Tím)");
+}
+
+void christmastide()
+{
+    printf("=======================================");
+    printf("\n===MÙA GIÁNG SINH===\n");
+    printf("Thời gian: 25 décembre --> Lễ Chúa Chịu Phép Rửa\n");
+    printf("Màu phụng vụ: Trắng\n");
+    printf("Mục đích: Mùa kỷ niệm mầu nhiệm Nhập thể của Chúa Kitô.\n");
+    printf("Các ngày lễ: 25/12: Lễ Giáng Sinh (Vàng)\n");
+    printf("26/12: Lễ Thánh Têphanô (Đỏ)\n");
+    printf("27/12: Lễ Thánh Sử Gioan (Trắng))\n");
+    printf("28/12: Lễ Các Thánh Anh Hài (Đỏ)\n");
+    printf("17/11 ÂL: Lễ Vía Phật A-di-đà (Đỏ)\n");
+    printf("CN sau 25/12 hoặc ngày 30/12: Lễ Thánh Gia (Vàng)\n");
+    printf("1/1: Tết Tây - Lễ Mẹ Thiên Chúa (Lam)\n");
+    printf("CN sau 1/1: Lễ Hiển Linh (Trắng)\n");
+    printf("8/12 ÂL: Lễ Phật Thành Đạo (Cam)\n");
+    printf("CN/T2 sau Hiển Linh: Lễ Chúa Chịu Phép Rửa (Trắng)");
+}
+
+void newyear()
+{
+    printf("=======================================");
+    printf("\n===MÙA THƯỜNG NIÊN A: TẾT NGUYÊN ĐÁN===\n");
+    printf("Thời gian: Thứ Hai I Thường Niên --> Thứ Ba trước Lễ Tro\n");
+    printf("Màu phụng vụ: Lục\n");
+    printf("Mục đích: Mùa khởi đầu của sứ vụ của Chúa Giêsu và là mùa lễ hội thật sự của người Việt vì theo họ Tết quan trọng hơn cả Noel nhiều!.\n");
+    printf("Các ngày lễ: 8/12 ÂL: Lễ Phật Thành Đạo (Cam)\n");
+    printf("23/12 ÂL: Ông Táo chầu Trời (Trắng)\n");
+    printf("30/12 ÂL: Giao Thừa: Cầu Bình An cho Năm Mới (Đỏ)\n");
+    printf("1/1 ÂL: Tết Nguyên Đán: Lễ Minh Niên (Đỏ)\n");
+    printf("2/1 ÂL: Tết Nguyên Đán: Cầu cho Tổ Tiên (Đỏ)\n");
+    printf("3/1 ÂL: Tết Nguyên Đán: Cầu Thánh Hoá Công Ăn Việc Làm (Đỏ)\n");
+    printf("9/1 ÂL: Đại lễ Đức Chí Tôn (Trắng)\n");
+    printf("2/2: Lễ Nến (Trắng)\n");
+    printf("3/2: Ngày Thành lập Đảng Cộng sản Việt Nam (Đỏ)\n");
+    printf("14/2: Lễ Thánh Valentinô, Cyriliô và Mêthôđiô (Trắng)\n");
+    printf("15/1 ÂL: Lễ Thượng Ngươn (Trắng)");
+}
+
+void lent()
+{
+    printf("=======================================");
+    printf("\n===MÙA CHAY===\n");
+    printf("Thời gian: Lễ Tro --> Sáng Thứ Bảy Tuần Thánh\n");
+    printf("Màu phụng vụ: Tím\n");
+    printf("Mục đích: Mùa ăn chay sám hối, chuẩn bị cho Lễ Phục Sinh. (Lưu ý: Không Alleluia suốt cả Mùa Chay (kể cả lễ trọng, kính), và không chưng hoa và dạo đàn trong Mùa Chay và Kinh Vinh Danh trong Chúa Nhật (trừ lễ trọng, kính).)\n");
+    printf("Các ngày lễ: Thứ Tư Lễ Tro (Tím, giữ chay kiêng thịt)\n");
+    printf("Mỗi Thứ Sáu trong Mùa Chay (Tím, kiêng thịt)\n");
+    printf("Chúa Nhật IV Mùa Chay (Hồng)\n");
+    printf("14/2: Lễ Thánh Valentinô\n");
+    printf("15/1 ÂL: Lễ Thượng Ngươn\n");
+    printf("8/3: Ngày Quốc tế Phụ nữ - Thánh Gioan Thiên Chúa (Hồng)\n");
+    printf("19/3: Lễ Thánh Giuse (Trắng)\n");
+    printf("25/3: Lễ Truyền Tin (Lam)\n");
+    printf("26/3: Ngày Thành lập Đoàn Thanh niên Cộng sản Hồ Chí Minh (Lam)\n");
+    printf("T7 chót tháng 3, 20h30-21h30: Giờ Trái Đất\n");
+    printf("1/4: Cá Tháng Tư\n");
+    printf("10/3 ÂL: Ngày Giỗ tổ Hùng Vương\n");
+    printf("Chúa Nhật Lễ Lá (Đỏ)\n");
+    printf("Thứ Hai --> Sáng Thứ Năm Tuần Thánh (Tím)\n");
+    printf("Chiều T5 Tuần Thánh: Lễ Tiệc Ly (Vàng)\n");
+    printf("14 Nisan: Lễ Tưởng Niệm của Nhân Chứng Giê-hô-va (Đỏ)");
+    printf("Thứ Sáu Tuần Thánh: Tưởng niệm Cuộc Thương khó (Cấm thánh lễ, đỏ, giữ chay kiêng thịt)");
+    printf("Sáng Thứ Bảy Tuần Thánh (Không có phụng vụ, giữ chay kiêng thịt)");
+}
+
+void eastertide()
+{
+    printf("=======================================");
+    printf("\n===MÙA PHỤC SINH VÀ PHẬT ĐẢN===\n");
+    printf("Thời gian: Tối Thứ Bảy Tuần Thánh --> Lễ Hiện Xuống / Lễ Phật Đản\n");
+    printf("Màu phụng vụ: Trắng\n");
+    printf("Mục đích: Mùa kỷ niệm sự sống lại của Chúa Giêsu và kính mừng Phật đản sanh. (Lưu ý: Trong Mùa Phục Sinh, bài Công vụ Tông đồ thay thế Bài Cựu Ước và đặc biệt hát Alleluia. Đặc biệt, nguyện Kinh Lạy Nữ Vương Thiên Đàng thay thế Kinh Truyền Tin)\n");
+    printf("Các ngày lễ: Tối Thứ Bảy Tuần Thánh: Canh Thức Vượt Qua (Vàng)\n");
+    printf("Chúa Nhật Phục Sinh (Vàng)\n");
+    printf("Tuần Bát Nhật Phục Sinh (Vàng)\n");
+    printf("1/4: Cá Tháng Tư\n");
+    printf("10/3 ÂL: Ngày Giỗ tổ Hùng Vương\n");
+    printf("30/4: Ngày Chiến Thắng\n");
+    printf("1/5: Ngày Quốc tế Lao động và Thánh Giuse Thợ\n");
+    printf("Chúa Nhật II tháng Năm: Ngày của Mẹ (Vàng/Trắng/Đỏ)\n");
+    printf("Chúa Nhật VII Phục Sinh: Chúa Thăng Thiên (Trắng)\n");
+    printf("Chúa Nhật Chúa Thánh Thần Hiện Xuống (Đỏ)\n");
+    printf("15/4 ÂL: Lễ Phật Đản (Cam)\n");
+    printf("1/6: Ngày Quốc tế Thiếu nhi và Justinô Tử đạo (Đỏ)\n");
+    printf("5/5 ÂL: Tết Đoan Ngọ (Trắng)");
+}
+
+void pentecost()
+{
+    printf("=======================================");
+    printf("\n===MÙA THƯỜNG NIÊN B: MÙA HIỆN XUỐNG===\n");
+    printf("Thời gian: Lễ Mẹ Hội Thánh --> 15 juillet\n");
+    printf("Màu phụng vụ: Lục\n");
+    printf("Mục đích: Mùa kỷ niệm sự lớn mạnh của Giáo Hội, và là mùa mà các học sinh được nghỉ hè\n");
+    printf("Các ngày lễ: Chúa Nhật Chúa Ba Ngôi (Trắng)\n");
+    printf("Chúa Nhật Mình Máu Thánh Chúa (Trắng)\n");
+    printf("Thứ Sáu Thánh Tâm (Trắng)\n");
+    printf("1/6: Ngày Quốc tế Thiếu nhi và Justinô Tử đạo (Đỏ)\n");
+    printf("Chúa Nhật III tháng Sáu: Ngày của Cha (Trắng)");
+    printf("24/6: Sinh nhật Gioan Tẩy Giả (Trắng)\n");
+    printf("29/6: Lễ Thánh Phêrô và Phaolô (Đỏ)\n");
+    printf("5/5 ÂL: Tết Đoan Ngọ (Trắng)");
+}
+
+void ullambana()
+{
+    printf("=======================================");
+    printf("\n===MÙA THƯỜNG NIÊN C: MÙA VU LAN, QUỐC KHÁNH VÀ TRUNG THU===\n");
+    printf("Thời gian: 16 juillet --> 30 septembre\n");
+    printf("Màu phụng vụ: Lục\n");
+    printf("Mục đích: Mùa báo hiếu cha mẹ, công ơn tổ quốc và tạ ơn vì mùa màng bội thu\n");
+    printf("Các ngày lễ: 27/7: Ngày Thương binh Liệt sĩ (Đen)\n");
+    printf("6/8: Lễ Hiển Dung (Trắng)\n");
+    printf("15/8: Lễ Đức Mẹ Hồn Xác Lên Trời (Lam)\n");
+    printf("19/8: Ngày Cách mạng Tháng Tám và Công an Nhân dân (Đỏ)\n");
+    printf("7/7 ÂL: Tết Thất Tịch (Hồng)\n");
+    printf("15/7 ÂL: Lễ Vu Lan Bồn (Hồng)\n");
+    printf("2/9: Ngày Quốc Khánh nước Cộng hoà Xã hội Chủ nghĩa Việt Nam (Đỏ)\n");
+    printf("14/9: Lễ Suy Tôn Thánh Giá (Đỏ)\n");
+    printf("15/8 ÂL: Tết Trung Thu: Cầu cho Thiếu Nhi (Trắng)");
+}
+
+void rosary()
+{
+    printf("=======================================");
+    printf("\n===MÙA THƯỜNG NIÊN D: MÙA MÂN CÔI VÀ NƯỚC TRỜI===\n");
+    printf("Thời gian: 1 octobre --> Thứ Bảy XXXIV Thường Niên\n");
+    printf("Màu phụng vụ: Lục\n");
+    printf("Mục đích: Mùa cánh chung, và là mùa Chúa Giêsu Kitô làm Vua vũ trụ và là mùa lần hạt Mân Côi.\n");
+    printf("Các ngày lễ: Chúa Nhật đầu tháng 10: Lễ Đức Mẹ Mân Côi (Lam)\n");
+    printf("20/10: Ngày Phụ nữ Việt Nam (Hồng)\n)");
+    printf("31/10: Halloween (Cam)\n");
+    printf("1/11: Lễ Các Thánh Nam Nữ (Trắng)\n");
+    printf("2/11: Cầu cho Các Tín hữu đã qua đời (Tím)\n");
+    printf("9/11: Cung hiến Thánh đường Latêranô (Trắng)\n");
+    printf("20/11: Ngày Nhà giáo Việt Nam (Hồng)\n");
+    printf("15/10 ÂL: Lễ Hạ Ngươn (Trắng)\n");
+    printf("Chúa Nhật XXXIV Thường Niên: Chúa Kitô Vua Vũ Trụ - Ngày Giới trẻ Thế giới (Trắng)");
+}
+
+void main()
+{
+    int n,tt;
+    do
+    {
+        printf("=======================================\n");
+        printf("1. Mùa Vọng\n");
+        printf("2. Mùa Giáng Sinh\n");
+        printf("3. Mùa Tết Nguyên Đán\n");
+        printf("4. Mùa Chay\n");
+        printf("5. Mùa Phục Sinh và Phật Đản\n");
+        printf("6. Mùa Hiện Xuống\n");
+        printf("7. Mùa Vu Lan, Quốc Khánh và Trung Thu\n");
+        printf("8. Mùa Mân Côi và Nước Trời\n");
+        printf("Nhập tên mùa: ");
+        scanf("%d",&n);
+        switch(n)
+        {
+            case 1: advent(); break;
+            case 2: christmastide(); break;
+            case 3: newyear(); break;
+            case 4: lent(); break;
+            case 5: eastertide(); break;
+            case 6: pentecost(); break;
+            case 7: ullambana(); break;
+            case 8: rosary(); break;
+            default: printf("Mùa vừa nhập không hợp lệ!");
+        };
+        printf("\nNhấn số 1 để thử lại! ");
+        scanf("%d",&tt);
+    } while (tt==1);
+    printf("=======================================\n");
+    printf("Chương trình kết thúc.\n");
+    printf("=======================================\n");
+}

@@ -1,0 +1,133 @@
+#include <stdio.h>
+void phucsinh(int y)
+{
+    int a,b,c,d,e,g,h,i,k,l,m,n,p;
+    if (y>1582)
+    {
+        a=y%19;
+        b=y/100;
+        c=y%100;
+        d=b/4;
+        e=b%4;
+        g=(8*b+13)/25;
+        h=(19*a+b-d-g+ 15)%30;
+        i=c/4;
+        k=c%4;
+        l=(32+2*e+ 2*i-h-k)%7;
+        m=(a+11*h+19*l)/433;
+        n=(h+l-7*m+90)/25;
+        p=(h+l-7*m+33*n+19)%32;
+        printf("\nLễ Phục Sinh: %d tháng %d",p,n);
+        }
+    else if (y>325)
+    {  
+        a=y%4;
+        b=y%7;
+        c=y%19;
+        d=(19*c+15)%30;
+        e=(2*a+4*b-d+34)%7;
+        g=d+e+114;
+        n=g/31;
+        p=(g%31)+1;
+        if (p==32)
+        {
+            n=n++;
+            p=1;
+        };
+        printf("\nLễ Phục Sinh: %d tháng %d",p,n);
+    }
+    else if (y>33) printf("\nLễ Phục Sinh không xác định");
+    else if (y==33) printf("\nNăm ấy, tại Giêrusalem, Chúa Giêsu 33 tuổi chịu thương khó, chết, và đã phục sinh và lên trời.");
+    else if (y>1) printf("\nNăm ấy, Chúa Giêsu %d tuổi.",y);
+    else printf("\nNăm ấy Chúa Giêsu đã giáng sinh trên máng cỏ thành thành Bê-lem.");
+}
+void pascha(int y)
+{
+    int a,b,c,d,e,g,h,n,p;
+    if (y>1582)
+    {  
+        a=y%4;
+        b=y%7;
+        c=y%19;
+        d=(19*c+15)%30;
+        e=(2*a+4*b-d+34)%7;
+        g=d+e+114;
+        n=g/31;
+        p=(g%31)+1;
+        if (p==32)
+        {
+            n=n++;
+            p=1;
+        };
+        h=y/100-y/400-2;
+        printf("\nLễ Pascha: %d tháng %d (lịch Julian)\nKhoảng cách ngày: %d",p,n,h);
+    };
+}
+void nengo(int y)
+{
+    int a;
+    if (y>2019)
+    {
+        a=y-2018;
+        printf("\nLệnh Hoà %d",a);
+    }
+    else if (y==2019) printf("\nBình Thành 31 / Lệnh Hoà nguyên niên");
+    else if (y>1989)
+    {
+        a=y-1988;
+        printf("\nBình Thành %d",a);
+    }
+    else if (y==1989) printf("Chiêu Hoà 64 / Bình Thành nguyên niên");
+    else if (y>1926)
+    {
+        a=y-1925;
+        printf("\nChiêu Hoà %d",a);
+    }
+    else if (y==1926) printf("\nĐại Chánh 15 / Chiêu Hoà nguyên niên");
+    else if (y>1912)
+    {
+        a=y-1911;
+        printf("\nĐại Chánh %d",a);
+    }
+    else if (y==1912) printf("\nMinh Trị 45 / Đại Chánh nguyên niên");
+    else if (y>1872)
+    {
+        a=y-1867;
+        printf("\nMinh Trị %d",a);
+    }
+    else printf("\nDùng âm lịch trước 2 tháng Chạp năm Minh Trị 5 (31/12/1872)");
+}
+void leap(int a)
+{
+    if (a>1582)
+        if (a%100!=0)
+            if (a%4==0) printf ("\nNăm nhuận"); else printf("\nNăm thường");
+        else
+            if (a%400==0) printf ("\nNăm nhuận"); else printf("\nNăm thường");
+    else if (a>4) if (a%4==0) printf ("\nNăm nhuận"); else printf("\nNăm thường");
+    else printf ("\nNăm không xác định");
+}
+void main()
+{
+    int a,p,v,cont;
+    do
+    {
+        printf("=====");
+        do
+        {
+            printf("\nHãy nhập năm dương lịch!\n");
+            scanf("%d",&a);
+        } while (a<1);
+        p=544+a;
+        v=2879+a;
+        printf("AD %d\nPL %d\nVL %d",a,p,v);
+        nengo(a);
+        leap(a);
+        phucsinh(a);
+        pascha(a);
+        printf("\n=====");
+        printf("\nNhấn số 1 để tiếp tục. Nhấn các phím khác để kết thúc.\n");
+        scanf("%d",&cont);
+    } while(cont==1);
+    printf("=====");
+}

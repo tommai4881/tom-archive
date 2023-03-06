@@ -1,0 +1,79 @@
+#include <stdio.h>
+
+int isleap(int y) //determine if y is a leap year
+{ 
+    int l;
+    if (y > 1582) {
+        if ((y % 4 == 0 && y % 100 != 0) || (y % 100 == 0 && y % 400 == 0)) l = 1;
+        else l = 0;
+    }
+    else if (y > 4) {
+        if (y % 4 == 0) l = 1;
+        else l = 0;
+    }
+    else l = 0;
+    return l;
+}
+
+int doomsday(int y)
+{
+    int a,t;
+    if (y > 4) {
+        a = y / 100; //find century anchor date
+        if (y > 1582) a = (5 * (a % 4)) % 7 + 2;
+        else a = (6 * a) % 7;
+        t = y % 100; // find the anchor date of the last 2 digits
+        if (t % 2 == 1) t += 11;
+        t /= 2;
+        if (t % 2 == 1) t += 11;
+        t = 7 - (t % 7);
+        t = (a + t) % 7; //doomsday of the year
+    }
+    else t = 0;
+    return t;
+}
+
+void dominical(int y) //determine the dominical letter knowing the doomsday
+{
+    if (y != 1582)
+    {
+        if (isleap(y) == 1)
+        {
+            switch (doomsday(y))
+            {
+                case 0: printf("DC"); break;
+                case 1: printf("CB"); break;
+                case 2: printf("BA"); break;
+                case 3: printf("AG"); break;
+                case 4: printf("GF"); break;
+                case 5: printf("FE"); break;
+                case 6: printf("ED");
+            }
+        }   
+        else
+        {
+            switch (doomsday(y))
+            {
+                case 0: printf("C"); break;
+                case 1: printf("B"); break;
+                case 2: printf("A"); break;
+                case 3: printf("G"); break;
+                case 4: printf("F"); break;
+                case 5: printf("E"); break;
+                case 6: printf("D");
+            }
+        }
+    }
+    if (y == 1582) printf("GC");
+}
+
+void main()
+{
+    int y; scanf("%d",&y);
+    dominical(y); printf(". ");
+    if (y > 4)
+    {
+        if(isleap(y) == 1) printf("Leap year");
+        else printf("Normal year");
+    }
+}

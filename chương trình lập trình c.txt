@@ -1,0 +1,55 @@
+#include <stdio.h>
+#include <conio.h>
+
+void operation(float a, float b) /* Bài toán tính tổng hiệu tích thương */
+{
+    float s,d,p,q;
+    printf("Nhập hai số thực: "); scanf("%f %f",&a,&b);
+    s=a+b; printf("Tổng = %.2f + %.2f = %.2f",a,b,s);
+    d=a-b; printf("\nHiệu = %.2f - %.2f = %.2f",a,b,d);
+    p=a*b; printf("\nTích = %.2f * %.2f = %.2f",a,b,p);
+    q=a/b; printf("\nThương = %.2f / %.2f = %.2f",a,b,q);
+}
+
+void temperature(float f) /* Độ F --> Độ C */
+{
+    float c;
+    printf("Nhập nhiệt độ Farenheit: "); scanf("%f",&f);
+    c = float (f-32)*5/9;
+    printf("Vậy, %.0f độ Farenheit được quy đổi thành %.0f Celsius",f,c);
+}
+
+void hamso(int x) /* Tính giá trị */
+{
+int F, G;
+    printf("Nhập số x: "); scanf("%d",&x);
+    F= 5*x*x + 6*x + 1; printf("f(X) = %d \n",F);
+    G= 2*x*x*x*x - 5*x*x + 4*x + 1; printf("g(X) = %d",G);
+}
+
+int main()
+{
+    int bai, cn;
+    float a,b,f;
+    int x;
+    printf("Chào mừng đến với chương trình của Mai Lê Bảo Khang!\n");
+    do
+    {
+        printf("=====oOo=====\n");
+        printf("Nhập số bài cần làm: ");
+        scanf("%d",&bai);
+        switch(bai)
+        {
+            case 1: operation(a,b); break;
+            case 2: temperature(f); break;
+            case 3: hamso(x); break;
+            default: printf("Bài đã nhập không hợp lệ.");
+        };
+        printf("\n----------");
+        printf("\nBạn có muốn thử lại không? Nhấn số 1 để tiếp tục.\n");
+        scanf("%d",&cn);
+    } while (cn==1);
+    printf("=====oOo=====\n");
+    printf("Chương trình kết thúc.");
+    getch(); return 0;
+}

@@ -1,0 +1,95 @@
+#include <stdio.h>
+
+void aulac() {
+    printf("VÔ THƯỢNG SƯ");
+    printf("\n============");
+    printf("\nKhi NGƯỜI hát cho em nghe");
+    printf("\nđiệu ca tình sử từ ngày khai Thiên.");
+    printf("\nEm sẽ biết: em là Tiên,");
+    printf("\nlà người yêu dấu của ngàn ngôi sao!");
+    printf("\n\nKhi NGƯỜI rực rỡ nuông chào,");
+    printf("\nlà em xán lạn ngạt ngào hương hoa.");
+    printf("\nEm biết em là Hằng Nga,");
+    printf("\nlà người tình của hà sa tinh cầu!");
+    printf("\n\nNGƯỜI là CHA của em và ta,");
+    printf("\ncủa vũ trụ nhiệm mầu.");
+    printf("\nVề đi thôi, về mau,");
+    printf("\nTa với em về Cố Quán!");
+    printf("\nVề đi thôi, về mau,");
+    printf("\nvề đi nhé, về mau!");
+    printf("\n\nKhi NGƯỜI cho em Tình Sâu");
+    printf("\nkhông bao giờ nhạt theo màu thời gian.");
+    printf("\nEm biết em là Nữ Hoàng");
+    printf("\ntrang nghiêm ngự trị trên ngàn Thiên Cung!");
+    printf("\n\nEm và ta, là con của ĐẤNG VÔ CÙNG.");
+    printf("\nEm phải biết: chính em là VÔ THƯỢNG,");
+    printf("\nem phải biết: chính em là VÔ THƯỢNG-");
+    printf("\nVÔ THƯỢNG SƯ là ta!!!");
+}
+
+void eng() {
+    printf("THE SUPREME MASTER");
+    printf("\n============");
+    printf("\nWhen HES whispreth into thy ears");
+    printf("\nthe Song of Love since ancient years.");
+    printf("\nThou knowest, thou knowest that thou art");
+    printf("\nthe darling of heavenly stars!");
+    printf("\n\nWhen HES adoreth thy whole being");
+    printf("\nwith Light that shattereth dark thinking.");
+    printf("\nThou knowest, knowest that thou art");
+    printf("\nGoddess of the Moon the beloved of galaxies afar!");
+    printf("\n\nHES is our FATHER,");
+    printf("\nthe Lord of Yin and Yang");
+    printf("\nLet's go, let's run, let's fly!");
+    printf("\nFly fly fly, back to where we were,");
+    printf("\nFly fly fly,");
+    printf("\nback to Paradise!");
+    printf("\n\nWhen HES graceth thee Love Eternal,");
+    printf("\nO Joy that lasteth beyond Three Worlds.");
+    printf("\nThou knowest, thou knowest that thou wilt be");
+    printf("\nThe Queen of Celestial Hierachy!");
+    printf("\n\nThou and I, children of THE MOST HIGH");
+    printf("\nNow that thou art");
+    printf("\nTHE SUPREME MASTER-");
+    printf("\nTHE SUPREME MASTER we are!!!");
+}
+
+void hanviet() {
+    printf("VÔ THƯỢNG SƯ");
+    printf("\n============");
+    printf("\nĐương THA tại nhĩ đích nhĩ bàng khinh khinh xướng,");
+    printf("\nna thủ tòng khai thiên tịch địa tình sử ca.");
+    printf("\nNhĩ, nhĩ xác hội liễu giải,");
+    printf("\nnhĩ thị thiên thượng thiên vạn tinh cầu đích ngẫu tượng!");
+    printf("\n\nĐương THA huy hoàng sủng nghinh nhĩ,");
+    printf("\nbiến thành vô hạn đích quang lượng, tán phát trận hoa hương nùng uất.");
+    printf("\nNhĩ, nhĩ tri đạo: nhĩ thị Thường Nga,");
+    printf("\nthị toàn vũ trụ đích ái tinh.");
+    printf("\n\nTHA thị nhĩ ngã đích PHỤ THÂN,");
+    printf("\nTHA thị càn khôn đích chủ.");
+    printf("\nHồi khứ ba, khoái hồi khứ!");
+    printf("\nNhĩ hoà ngã hồi cố quốc,");
+    printf("\nhồi khứ ba, khoái hồi khứ!");
+    printf("\n\nĐương THA tứ cấp nhĩ Chân Tình đích Tư Ái,");
+    printf("\nsiêu quá Tam Giới đích giới tuyến!");
+    printf("\nNhĩ, nhĩ tri đạo: nhĩ thị Nữ Vương,");
+    printf("\ntrang nghiêm ngự trị cao thiên!");
+    printf("\n\nNhĩ hoà ngã, lai tòng VÔ BIÊN.");
+    printf("\nỨng liễu giải: VÔ THƯỢNG SƯ thị nhĩ,");
+    printf("\nứng liễu giải: VÔ THƯỢNG SƯ thị nhĩ-");
+    printf("\nỨng liễu giải: ngã môn thị VÔ THƯỢNG SƯ!!!");
+}
+
+void main() {
+    int a;
+    printf("Xin mời chọn ngôn ngữ, bấm số 1 để chỉ bản Tiếng Việt,\nbấm số 2 để chỉ bản Tiếng Anh!");
+    printf("\nbấm số 3 để chỉ bản Tiếng Hoa, phiên âm Hán-Việt\n");
+    scanf("%d",&a);
+    printf("\n");
+    switch (a) {
+        case 1: aulac(); break;
+        case 2: eng(); break;
+        case 3: hanviet(); break;
+        default: printf("Không hợp lệ.");
+    }
+}

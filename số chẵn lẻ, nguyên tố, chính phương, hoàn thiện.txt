@@ -1,0 +1,68 @@
+#include <stdio.h>
+#include <conio.h>
+#include <math.h>
+
+void chanle(int n)
+{
+    if(n%2==0) printf("Số %d là số chẵn.",n);
+    else printf("Số %d là số lẻ.",n);
+}
+
+void songuyento(int n)
+{
+    int i,temp=0;
+    for (i=2;i<n/2;i++)
+    {
+        if(n%i==0)
+        {
+            temp++; break;
+        };
+    };
+    if (temp==0 && n!=1) printf("Số %d là số nguyên tố.",n);
+    else printf("Số %d không phải là số nguyên tố.",n);
+}
+
+void chinhphuong(int n)
+{
+    int sqr=sqrt(n);
+    if (sqr*sqr==n) printf("Số %d là số chính phương.",n);
+    else printf("Số %d không phải là số chính phương.",n);
+}
+
+void hoanthien(int n)
+{
+    int s=0;
+    for (int i=1;i<=n-1;i++) if (n%i==0) s+=i;
+    if (s==n) printf("Số %d là số hoàn thiện.",n);
+    else printf("Số %d không phải là số hoàn thiện.",n);
+}
+
+int firstprimes(int n)
+{
+    printf("%d số nguyên tố đầu tiên là \n",n);
+    int dem =0;
+    int i=2;
+    while(dem<n)
+    {
+        if (songuyento(i))
+        {
+            printf("%d",i);
+            dem++
+        };
+        i++;
+    }
+}
+
+int main()
+{
+    int n;
+    printf("Nhập số sau đây: ");
+    scanf("%d",&n);
+    chanle(n);printf("\n");
+    songuyento(n);printf("\n");
+    chinhphuong(n);printf("\n");
+    hoanthien(n);printf("\n");
+    firstprimes(n);
+    getch();
+    return 0;
+}

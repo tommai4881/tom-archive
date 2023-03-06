@@ -1,0 +1,83 @@
+#include <stdio.h>
+
+int anchor(int y) {
+    int c,r;
+    c=y/100;
+    if (y>1582) r=(5*(c%4))%7+2;
+    else if (y>4) r=(6*c)%7;
+    return r;
+}
+
+int doomsday(int y) {
+    int t;
+    t=y%100;
+    if (t%2==1) t=t+11;
+    t=t/2;
+    if (t%2==1) t=t+11;
+    t=7-(t%7);
+    return t;
+}
+
+void isleap(int y) {
+    if (y>1582) if ((y%100!=0 && y%4==0) || (y%100==0 && y%400==0)) 
+            printf("Nam nhuan");
+        else printf("Nam thuong");
+    else if (y>4) if (y%4==0) printf("Nam nhuan"); 
+        else printf("Nam thuong");
+}
+
+
+int is_leap(int y) {
+    int l;
+    if (y>1582) if ((y%100!=0 && y%4==0) || (y%100==0 && y%400==0)) l=1;
+        else l=0;
+    else if (y>4) if (y%4==0) l=1; else l=0;
+    return l;
+}
+
+void dominical(int y) {
+    int d,a;
+    d=doomsday(y);
+    a=anchor(y);
+    d=(d+a)%7;
+    if (is_leap(y)==1) {
+        if (d==0) printf ("DC");
+        else if (d==1) printf ("CB");
+        else if (d==2) printf ("BA");
+        else if (d==3) printf ("FG");
+        else if (d==4) printf ("GF");
+        else if (d==5) printf ("FE"); else printf("ED");
+    }
+    else {
+        if (d==0) printf ("C");
+        else if (d==1) printf ("B");
+        else if (d==2) printf ("A");
+        else if (d==3) printf ("G");
+        else if (d==4) printf ("F");
+        else if (d==5) printf ("E"); else printf("D");
+    }
+}
+
+int dif(int y){
+    int d;
+    d=y/100-y/400-2; printf("%d",d);
+    return d;
+}
+
+void main() {
+    int y,r,t,D;
+    do {
+        printf("Nhap nam! "); scanf("%d",&y);
+    } while (y<5);
+    r=anchor(y); t=doomsday(y);
+    D=(r+t)%7;
+    if (D==0) printf("Chua Nhat");
+    else if (D==1) printf ("Thu Hai");
+    else if (D==2) printf ("Thu Ba");
+    else if (D==3) printf ("Thu Tu");
+    else if (D==4) printf ("Thu Nam");
+    else if (D==5) printf ("Thu Sau"); else printf("Thu Bay");
+    printf("\n");
+    isleap(y); printf("\n");
+    dominical(y); printf("\n"); if (y>1582) dif(y);
+}
